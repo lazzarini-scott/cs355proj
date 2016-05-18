@@ -1,0 +1,31 @@
+<% include ../partials/header.ejs %>
+
+
+<h1>Displaying foods without rates.</h1>
+<br />
+<h2>Why don't you rate them!</h2>
+<br/>
+<br />
+<% if(rs.length > 0) { %>
+<table border="1">
+    <tr><th>Food</th><th>Rate</th></tr>
+    <% for (var i=0; rs.length > i; i++) { %>
+    <tr>
+        <td><a href="/food/?food_id=<%= rs[i].food_id %>"> <%= rs[i].food_name %></a></td>
+        <td>
+
+            <a href="/food/subq/?food_id=<%= rs[i].food_id %>">Rate</a>
+        </td>
+    </tr>
+    <% } %>
+</table>
+<% } else { %>
+All foods have been rated.
+<% } %>
+
+
+
+
+
+
+<% include ../partials/footer.ejs %>

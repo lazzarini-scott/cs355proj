@@ -1,0 +1,31 @@
+<% include ../partials/header.ejs %>
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Food</th><th>Calories</th><th>Diet</th><th>Protein</th><th>Carbohydrates</th><th>Sugar</th><th>Fat</th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/food/?food_id=<%= rs[i].food_id %>"> <%= rs[i].food_name %></a></td>
+            <td><%=rs[i].calories %></td>
+            <td><%=rs[i].diet %></td>
+            <td><%=rs[i].protein %></td>
+
+            <td><%=rs[i].carbohydrates %></td>
+            <td><%=rs[i].sugar %></td>
+            <td><%=rs[i].fat %></td>
+
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No food exist.
+    <% } %>
+</div>
+
+<div style="margin-top:10px;">
+    <a href="/food/create">Create New Food</a>
+</div>
+
+<% include ../partials/footer.ejs %>
+
+

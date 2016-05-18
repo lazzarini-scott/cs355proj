@@ -1,0 +1,22 @@
+<% js_includes = []%>
+
+
+<% include ../partials/header.ejs %>
+
+<h1>Find user(s) having an average rating on vegan food</h1>
+
+<form  action="/users/having_user">
+    Select an average rating from 1-5 to find users that rate with or above that on average for only vegan foods:
+    <br />
+    <input type="radio" name="avg_rating" id="avg_rating" value = 1> 1
+    <input type="radio" name="avg_rating" id="avg_rating" value = 2> 2
+    <input type="radio" name="avg_rating" id="avg_rating" value = 3> 3
+    <input type="radio" name="avg_rating" id="avg_rating" value = 4> 4
+    <input type="radio" name="avg_rating" id="avg_rating" value = 5> 5
+    <br />
+    <button id="addBtn">Go!</button>
+</form>
+<!--<div id="message" style="display:none">This Text is Hidden!</div>-->
+
+
+<% include ../partials/footer.ejs %>

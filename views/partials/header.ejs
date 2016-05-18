@@ -1,0 +1,38 @@
+<! DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <% if (typeof js_includes !== 'undefined') { %>
+    <% for(var i=0; i < js_includes.length; i++) { %>
+    <script src="<%= js_includes[i] %>"></script>
+    <% }%>
+    <% }%>
+</head>
+<div style="float:right;">
+    <% if(typeof fname !== "undefined") { %>
+    Welcome, <%= fname %>
+    <% } else { %>
+    <a href="/login">Login</a>
+    <% } %>
+</div>
+<body>
+<div id="header">
+    Vegefoods
+</div>
+
+<div id="nav">
+    <a href="/about/">About us</a>
+    <br />
+        <a href="/users/join">Sign up</a>
+    <br />
+    <a href="/food/all">View all food</a>
+    <br />
+    <a href="/food/rating">Rate a food!</a>
+    <br />
+    <a href="/food/findrate">Find a particular rate from user</a>
+    <br />
+    <a href="/food/without">Find food(s) without rating</a>
+    <br />
+    <a href="/users/find">Find a users avg ratings</a>
+    <br />
+</div>

@@ -1,0 +1,30 @@
+<% include ../partials/header.ejs %>
+<br/>
+<br/>
+<% if(rs.length > 0) { %>
+<b>   &nbsp;&nbsp;&nbsp; Food:</b><%= rs[0].food_name %>
+<br />
+<br/>
+<b>   &nbsp;&nbsp;&nbsp; Price:</b><%= rs[0].price %>
+<br />
+<br/>
+<b>   &nbsp;&nbsp;&nbsp; Calories:</b><%= rs[0].calories %>
+<br />
+<br/>
+<b>  &nbsp;&nbsp;&nbsp;   Average Rating:</b> <%= rs[0].avgs %>
+<br />
+<br/>
+<b> &nbsp;&nbsp;&nbsp; Locations to find these foods:</b>
+
+
+    <% for(var i=0; i < rs.length; i++) {%>
+    <p> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &#8226; <%= rs[i].stores_name %></p>
+
+    <% } %>
+
+<% } else { %>
+There is not enough info for this food. Please enter both a location and a rating for this item. Thank you <%= food_id %>.
+<% } %>
+
+
+<% include ../partials/footer.ejs %>

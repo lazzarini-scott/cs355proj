@@ -1,0 +1,18 @@
+
+<% var js_includes = ['https://code.jquery.com/jquery-1.12.3.min.js', '/javascripts/login_ajax.js']%>
+
+<% include ../partials/header.ejs %>
+
+<h1>Login</h1>
+<% if(typeof msg !== "undefined") { %>
+<%= msg %>
+<% } %>
+<form action="/authenticate">
+    <label for="email">Email:</label><input type="text" id="email" name="email" /><br />
+    <label for="passw">Password:</label><input type="passw" id="passw" name="passw" /><br />
+    <!--<button >Go!</button>-->
+    <button id="addBtn">Go!</button>
+</form>
+<div id="message" style="display:none">This Text is Hidden!</div>
+
+<% include ../partials/footer.ejs %>

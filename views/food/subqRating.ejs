@@ -1,0 +1,45 @@
+<% include ../partials/header.ejs %>
+
+<% if(typeof users_id != "undefined") {%>
+<input type="hidden" id="users_id" value="<%=users_id%>">
+<% } %>
+
+
+<h1>Rate a food</h1>
+
+<form method="POST" action="/food/insert_rating">
+    Food(s) <br />
+    <% for(var i = 0; i < rs.length; i++) {%>
+    <input type="checkbox" name="food_id" id="food_id"
+
+            <%
+
+
+            for (var j=0; j < rs.length; j++) {
+            if(rs[i].food_id == rs[j].food_id) { %>
+           checked
+
+            <% }
+            }
+            %>
+
+
+           value="<%= rs[i].food_id %>"><%= rs[i].food_name %>
+    <% } %>
+    <br />
+    <br />
+    <br />
+    Rating(1-5):     <input type="radio" name="food_rating" id="food_rating" value = 1> 1
+    <input type="radio" name="food_rating" id="food_rating" value = 2> 2
+    <input type="radio" name="food_rating" id="food_rating" value = 3> 3
+    <input type="radio" name="food_rating" id="food_rating" value = 4> 4
+    <input type="radio" name="food_rating" id="food_rating" value = 5> 5
+    <br />
+    <button id="addBtn">Rate</button>
+</form>
+<div id="message" style="display:none">This Text is Hidden!</div>
+
+
+
+
+<% include ../partials/footer.ejs %>

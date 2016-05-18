@@ -1,0 +1,28 @@
+<% js_includes = []%>
+
+
+<% include ../partials/header.ejs %>
+
+<h1>Join our website to get access to the site</h1>
+
+<form method="POST" action="/users/insert_user">
+    Username <input type="text" id="username" name="username" /><br />
+    First Name: <input type="text" id="fname" name="fname" /><br />
+    Last name: <input type="text" id="lname" name="lname" /><br />
+    Email: <input type="text" id="email" name="email" /><br />
+    Password:  <input type="password" id="passw" name="passw" /><br />
+
+
+    <!--use on a different page!!-->
+    Select your favorite food(s)<br />
+    <% for( var i = 0; i < food.length; i++) { %>
+    <input type="checkbox" name="food_id" id="food_id" value="<%= food[i].food_id %>"><%= food[i].food_name %> <br />
+    <% } %>
+
+    <br />
+    <button id="addBtn">Join</button>
+</form>
+<!--<div id="message" style="display:none">This Text is Hidden!</div>-->
+
+
+<% include ../partials/footer.ejs %>

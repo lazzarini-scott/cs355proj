@@ -1,0 +1,28 @@
+<% js_includes = []%>
+<% include ../partials/header.ejs %>
+
+<h1>Find rating for particular food from particular user</h1>
+
+<br />
+<p> Enter the name of a user and select the name of a food to find a particular rating from them</p>
+<br />
+<form action="/food/rateResults">
+    User(s)<br />
+    <% for( var i = 0; i < rs.length; i++) { %>
+    <input type="radio" name="users_id" id="users_id" value="<%= rs[i].users_id %>"><%= rs[i].username %>
+    <% } %>
+    <br />
+    <br />
+
+    Food(s)<br />
+    <% for( var i = 0; i < food.length; i++) { %>
+    <input type="radio" name="food_id" id="food_id" value="<%= food[i].food_id %>"><%= food[i].food_name %>
+    <% } %>
+    <br />
+    <br />
+
+    <button id="addBtn">Go!</button>
+</form>
+<div id="message" style="display:none">This Text is Hidden!</div>
+
+<% include ../partials/footer.ejs %>

@@ -1,0 +1,22 @@
+<% include ../partials/header.ejs %>
+
+
+<!--Username: <%= rs.username %>-->
+<!--Rating: <%=rs.food_rating%>-->
+<% if(rs != null) { %>
+
+ Username: <%= rs.username %>
+<br />
+<br />
+
+Food: <%= rs.food_name%>
+<br />
+<br />
+Rating: <%= rs.food_rating %>
+
+
+<% } else { %>
+This user has not rated that food.
+<% } %>
+
+<% include ../partials/footer.ejs %>

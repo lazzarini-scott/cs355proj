@@ -1,0 +1,18 @@
+<% js_includes = []%>
+<% include ../partials/header.ejs %>
+
+<h1>Best food from a store</h1>
+
+<form action="/stores/bestProcedure">
+    Locations(s)<br />
+    <% for( var i = 0; i < stores.length; i++) { %>
+    <input type="checkbox" name="stores_id" id="stores_id" value="<%= stores[i].stores_id %>"><%= stores[i].stores_name %> <br />
+    <% } %>
+    <br />
+    <br />
+    <label for="avg_rating">Select a minimum average rating for your best food (1-5):</label><input type="number" id="avg_rating" name="avg_rating" /><br />
+    <button id="addBtn">Go!</button>
+</form>
+<div id="message" style="display:none">This Text is Hidden!</div
+
+<% include ../partials/footer.ejs %>

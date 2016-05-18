@@ -1,0 +1,25 @@
+<% var js_includes = ['https://code.jquery.com/jquery-1.12.3.min.js', '/javascripts/join_ajax.js']%>
+
+<% js_includes = []%>
+
+
+<% include ../partials/header.ejs %>
+
+<h1>Join our website to get access to the site</h1>
+
+<form>
+    Username <input type="text" id="username" name="username" /><br />
+    First Name: <input type="text" id="fname" name="fname" /><br />
+    Last name: <input type="text" id="lname" name="lname" /><br />
+    Email: <input type="text" id="email" name="email" /><br />
+    Password:  <input type="password" id="passw" name="passw" /><br />
+
+
+
+    <br />
+    <button id="addBtn">Join</button>
+</form>
+<div id="message" style="display:none">This Text is Hidden!</div>
+
+
+<% include ../partials/footer.ejs %>

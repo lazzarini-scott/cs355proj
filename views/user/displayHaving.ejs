@@ -1,0 +1,16 @@
+<% include ../partials/header.ejs %>
+
+<% if(rs.length > 0) { %>
+
+    <% for(var i=0; i < rs.length; i++) {%>
+&nbsp;&nbsp;&nbsp; Username: <%= rs[i].username %>
+    <p></p>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &#8226; Rating: <%= rs[i].vegan_rating %>
+    <p></p>
+    <% } %>
+
+<% } else { %>
+No user has an average rating above <%= vegan_rating %>.
+<% } %>
+
+<% include ../partials/footer.ejs %>

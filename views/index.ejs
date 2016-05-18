@@ -1,0 +1,25 @@
+<% include partials/header %>
+
+
+<div id="content">
+
+    <h2>Welcome</h2>
+
+    <p>
+    Welcome to our website. Please take the time to <a href="/login/">login</a> and gain acess to the features of the website.
+        If you are still unsure, please read our <a href="/about/">about us</a> page linked here and below or <a href="/users/join">sign up</a> if you haven't already.
+        <br /><br />Thank you.
+        </p>
+    <a href="/login/">Login</a><br />
+
+    <a href="/about/">About us</a><br />
+
+    <a href="/auth_required/">Link that requires authentication first</a><br />
+
+    <% if(typeof fname !== "undefined") { %><a href="/logout">Logout</a><% } %>
+
+
+</div>
+
+
+<% include partials/footer %>
